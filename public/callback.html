@@ -3,12 +3,25 @@
   <head>
     <script src="https://cdn.jsdelivr.net/gh/IdentityModel/oidc-client-js@1.10.1/dist/oidc-client.js"></script>
     <!-- #region snippet-callback -->
-    <script src="/getOidcConfig" type="text/javascript"></script>
     <script src="/parcel.js"></script>
     <script>
       Oidc.Log.logger = console;
       Oidc.Log.level = Oidc.Log.DEBUG;
-      const oidcClient = new Oidc.OidcClient(oidcConfig);
+      const oidcClient = new Oidc.OidcClient({
+        authority: 'https://auth.oasislabs.com',
+        client_id: 'CRnyj5x8aKrUajnrUR1Z78x',
+        redirect_uri: `http://localhost:4050/callback`,
+        response_type: 'code',
+        scope: 'openid profile email parcel.public',
+        filterProtocolClaims: false,
+        loadUserInfo: false,
+        extraQueryParams: {
+          audience: 'https://api.oasislabs.com/parcel',
+        },
+        extraTokenParams: {
+          audience: 'https://api.oasislabs.com/parcel',
+        },
+      });
       (async function () {
         const response = await oidcClient.processSigninResponse(location.href);
         const idToken = response.profile;
