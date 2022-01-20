@@ -3,14 +3,14 @@
   <head>
     <script src="https://cdn.jsdelivr.net/gh/IdentityModel/oidc-client-js@1.10.1/dist/oidc-client.js"></script>
     <!-- #region snippet-callback -->
-    <script src="/parcel.js"></script>
+    <script src="./parcel.js"></script>
     <script>
       Oidc.Log.logger = console;
       Oidc.Log.level = Oidc.Log.DEBUG;
       const oidcClient = new Oidc.OidcClient({
         authority: 'https://auth.oasislabs.com',
-        client_id: 'CRnyj5x8aKrUajnrUR1Z78x',
-        redirect_uri: `http://localhost:4050/callback`,
+        client_id: 'CNXmDjhYHpvxp8ufx67gRa1',
+        redirect_uri: `https://oasislabs.github.io/parcel-static-example-login-with-oasis-frontend/callback`,
         response_type: 'code',
         scope: 'openid profile email parcel.public',
         filterProtocolClaims: false,
@@ -57,7 +57,7 @@
           <span id="document-count" data-cy="document-count"></span>
           <span>documents!</span>
         </p>
-        <a href="https://steward.oasislabs.com/apps/A456Y2UGVZVtYD2ivytmAKz/join?redirect_uri=http%3A%2F%2Flocalhost%3A1234%2Fcallback">
+        <a href="https://steward.oasislabs.com/apps/A456Y2UGVZVtYD2ivytmAKz/join?redirect_uri=https%3A%2F%2Foasislabs.github.io%2Fparcel-static-example-login-with-oasis-frontend%2F">
           Manage permissions
         </a>
       </div>
