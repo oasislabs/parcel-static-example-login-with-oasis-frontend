@@ -4,13 +4,12 @@ const app = express();
 const port = 4050;
 
 // #region snippet-oidc-config
-const PARCEL_AUTH_URL = process.env.PARCEL_AUTH_URL ?? 'https://auth.oasislabs.com';
+const PARCEL_AUTH_URL = 'https://auth.oasislabs.com';
 
 const oidcConfig = {
   authority: PARCEL_AUTH_URL,
-  // Replace with your app's frontend client ID.
-  client_id: process.env.ACME_FRONTEND_CLIENT_ID!,
-  redirect_uri: `http://localhost:${port}/callback`,
+  client_id: 'CRnyj5x8aKrUajnrUR1Z78x',
+  redirect_uri: `http://localhost:4050/callback`,
   response_type: 'code',
   scope: 'openid profile email parcel.public',
   filterProtocolClaims: false,
