@@ -5,7 +5,6 @@
         "lib": ["esnext", "dom"],
         "module": "esnext",
         "moduleResolution": "node",
-        "outDir": "bin/",
         "strict": true,
         "target": "es2018"
     }

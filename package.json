@@ -11,7 +11,7 @@
     "node": ">=14.13"
   },
   "scripts": {
-    "start": "tsc -b && parcel build src/parcel.ts --out-dir public --target browser"
+    "start": "tsc -b && parcel build src/parcel.ts --out-dir docs --target browser"
   },
   "dependencies": {
     "@oasislabs/parcel": "^1.0.0-beta.16"
